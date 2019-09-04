@@ -7,7 +7,7 @@ services:
   
 script:
   - docker build -t "mywebserver:v1" .
-  - docker run -d -P "mywebserver:v1"
+  - docker run -d -P mywebserver:v1
   - docker ps
  
 after_script:
