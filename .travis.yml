@@ -1,0 +1,14 @@
+sudo: required
+dist: xenial
+language: go
+
+services:
+  - docker
+  
+script:
+  - docker build -t "mywebserver:v1" .
+  - docker run -d -P "mywebserver:v1"
+  - docker ps
+ 
+after_script:
+  - echo "Image built and run sucessfully!"
